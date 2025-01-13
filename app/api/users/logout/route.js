@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 connect();
 
-export async function GET(request) {
+export async function GET() {
     try{
         const response = NextResponse.json({
             message : "Successfully logged out!"
@@ -13,6 +13,8 @@ export async function GET(request) {
             httpOnly : true,
             expires : new Date(0)
         })
+
+        return response;
     }catch(error){
         return NextResponse.json({error : error.message},{status : 500});
     }
