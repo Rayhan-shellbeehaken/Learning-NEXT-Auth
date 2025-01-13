@@ -3,7 +3,6 @@ import mongoose, { mongo } from "mongoose";
 
 export async function connect() {
     try{
-        console.log(process.env.MONGO_URI);
         mongoose.connect(process.env.MONGO_URI)
         const connection = mongoose.connection;
 
